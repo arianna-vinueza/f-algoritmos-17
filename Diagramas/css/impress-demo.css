@@ -64,6 +64,7 @@ body {
     background:     -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+
 }
 #img1{
     width: 35%;
@@ -133,6 +134,11 @@ a:focus {
 */
 
 .step {
+    background-color:  #cc6600;
+    color: white;
+    text-align: justify-all;
+    font-size: 35px;
+
     position: relative;
     width: 900px;
     padding: 40px;
@@ -200,7 +206,9 @@ a:focus {
     display: block;
     font-size: 50px;
     line-height: 72px;
-
+    background-color:  #cc6600;
+    color: black;
+    text-align: center;
     margin-top: 100px;
 }
 
@@ -211,6 +219,8 @@ a:focus {
 
 #title {
     padding: 0;
+    background-color:  #cc6600;
+    color: black;
 }
 
 #title .try {
@@ -227,7 +237,7 @@ a:focus {
 }
 
 #title h1 {
-    font-size: 190px;
+    font-size: 150px;
 
     -webkit-transform: translateZ(50px);
     -moz-transform:    translateZ(50px);
@@ -237,7 +247,12 @@ a:focus {
 }
 
 #title .footnote {
-    font-size: 32px;
+    font-size: 35px;
+    margin-top: 1%;
+}
+
+p{
+    color: #802b00;
 }
 
 /*
