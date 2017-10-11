@@ -1,75 +1,159 @@
 <!doctype html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>DEBER DE PROGRAMACIÓN <br>DIAGRAMAS DE CLASES</title>
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
     <link href="css/impress-demo.css" rel="stylesheet" />
-   
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+
+
+<!--
+    
+    Body element is used by impress.js to set some useful class names, that will allow you to detect
+    the support and state of the presentation in CSS or other scripts.
+    
+    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+    support features required by impress.js, so you should apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    
+    When impress.js script detects that browser supports all required features, this class name will
+    be removed.
+    
+    The class name on body element also depends on currently active presentation step. More details about
+    it can be found later, when `hint` element is being described.
+    
+-->
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+
 
 <div class="fallback-message">
     <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 </div>
 
+
 <div id="impress">
-<div id="title" class="step" data-x="0" data-y="0" data-scale="2">
-    <span class="try" font size="5" data-x="10">DIAGRAMAS DE CLASE <br>EN DIA UML</span>
-        <h2 id="ing">ING. RENÉ ELIZALDE</h2>
+
+ <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+        <span class="try">Diagramas de Clase</span>
+        <h1>DIA UML<sup>*</sup></h1>
+        <span class="footnote"> Nombre: Arianna Vinueza<br>Ing. René Elizalde</span>
     </div>
-   
+    <!--
+        
+        Here is where interesting thing start to happen.
+        
+        Each step of the presentation should be an element inside the `#impress` with a class name
+        of `step`. These step elements are positioned, rotated and scaled by impress.js, and
+        the 'camera' shows them on each step of the presentation.
+        
+        Positioning information is passed through data attributes.
+        
+        In the example below we only specify x and y position of the step element with `data-x="-1000"`
+        and `data-y="-1500"` attributes. This means that **the center** of the element (yes, the center)
+        will be positioned in point x = -1000px and y = -1500px of the presentation 'canvas'.
+        
+        It will not be rotated or scaled.
+        
+    -->
     <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
-        <q> <b> <font size="6" color="purple"><q><b> Dia es una aplicación informática de propósito general para la creación de diagramas, desarrollada como parte del proyecto GNOME creada originalmente por Alexander Larsson. Para utilizarlo no se requiere ni un ordenador potente ni grandes conocimientos técnicos.</b>
-    </div>
-     <div id="its" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-        <p><b> <font size="6" color="white" id="tit"><p> <br/>
-         Se puede utilizar para dibujar diferentes tipos de diagramas. Actualmente se incluyen diagramas como: diagramas UML, diagramas de flujo, diagramas de redes, diagramas de circuitos eléctricos, etc. <b/> </p></font>
+        <q><b>Conceptos Básicos Dia UML</b></q><br>
+        <p>1. Dia es una aplicación informática de propósito general para la creación de diagramas, desarrollada como parte del proyecto GNOME creada originalmente por Alexander Larsson. Para utilizarlo no se requiere ni un ordenador potente ni grandes conocimientos técnicos</p>
     </div>
 
-    <div class="step slide" data-x="0" data-y="-1500" id="parr">
+    <!--
         
-        <p> En principio Dia fue diseñado para sistemas operativos Linux. Sin embargo, en la actualidad el programa también ofrece una versión para Windows que podemos descargar de Internet. <p/>
-    </div>
-
-    <div class="step slide" data-x="1000" data-y="-1500" id="parr">
+        The `id` attribute of the step element is used to identify it in the URL, but it's optional.
+        If it is not defined, it will get a default value of `step-N` where N is a number of slide.
         
-        <p> Entre las características de Dia podemos mencionar:
-        <ol>Permite crear una gran variedad de mapas y diagramas: diagramas de flujo, circuitos eléctricos, puzles, redes, cronogramas, etc.</ol>
-        <ol>Es un programa ligero que no requiere grandes prestaciones. Funciona ágilmente en la mayoría de ordenadores.</ol>
-        <ol>Ofrece mucha libertad al usuario para personalizar los trabajos.</ol>
-        <ol>Permite exportar los archivos a distintos formatos.</ol> <p/>
-    </div>
-
-     <div class="step slide" data-x="2000" data-y="-1500" id="im1">
-        <p><img src="">
-            
-        </p>
+        So in the example below it'll be `step-2`.
         
+        The hash part of the url when this step is active will be `#/step-2`.
+        
+        You can also use `#step-2` in a link, to point directly to this particular step.
+        
+        Please note, that while `#/step-2` (with slash) would also work in a link it's not recommended.
+        Using classic `id`-based links like `#step-2` makes these links usable also in fallback mode.
+        
+    -->
+    <div class="step slide" data-x="0" data-y="-1500">
+        <p><br><big>2. Se puede utilizar para dibujar diferentes tipos de diagramas. Actualmente se incluyen diagramas como: diagramas UML, diagramas de flujo, diagramas de redes, diagramas de circuitos eléctricos, etc.<hr><br>
+        3. En principio Dia fue diseñado para sistemas operativos Linux. Sin embargo, en la actualidad el programa también ofrece una versión para Windows que podemos descargar de Internet.</big></p>
     </div>
 
-   
-
-
-    <div id="gracias" class="step" data-x="3500" data-y="500"  data-rotate="900" data-scale="1">
-        <p> <b> <font size="25" color="PURPLE"><p><b> <br/>**GRACIAS** <b/> </font> 
+    <div class="step slide" data-x="1000" data-y="-1500">
+        <q>Concepto sobre Diagramas de Clase:</q>
+        <p>Los diagramas de clases son diagramas de estructura estática que muestran las clases del sistema y sus interrelaciones (incluyendo herencia, agregación, asociación, etc..)</p>
+        <img src="C:\Users\JC\Desktop\impress.js-master/herencia2.jpg" id="img1">
     </div>
 
-   
+      <div class="step slide" data-x="1000" data-y="-2500">
+        <q><b>CLASES</b></q>
+        <p>Es la unidad básica que encapsula toda la información de un objeto (un objeto es una instancia de una clase). En UML, una clase es representada por un rectángulo que posee 3 divisores</p><br><img src="C:\Users\JC\Desktop\impress.js-master/Dibujo 1.jpg" id="img1">
+    </div>
+
+    <div class="step slide" data-x="0" data-y="-2500">
+        <q><b>ATRIBUTOS</b></q>
+        <img src="C:\Users\JC\Desktop\impress.js-master/atributos.jpg" id="img1" id="atributos">
+    </div>
+
+    <div class="step slide" data-x="-1000" data-y="-2500">
+        <p><br><b>Public:</b> Indica que el método será tanto dentro como fuera de la clase, es decir, es accesible desde todos lados. private.<br>
+        <b>Private:</b> indica que a través de una instancia no es accesible el atributo. Al heredar el atributo se convierte en inaccesible.<br>
+        <b>Protected:</b> Indica que el atributo no será accesible desde fuera de la clase, pero si podrá ser accesado por métodos de la clase además de las subclases que se deriven.
+    </div>
+
+
+    <div id="ing" class="step" data-x="3500" data-y="-850" data-rotate="270" data-scale="6">
+          <q><b><big>GRACIAS</big></b></q>
+    </div>
+
+  
+  
+
+
     <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
     </div>
+
 </div>
 
 
-<script>
-if ("ontouchstart" in document.documentElement) { 
-    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-}
-</script>
-
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
+
 
 
 </body>
